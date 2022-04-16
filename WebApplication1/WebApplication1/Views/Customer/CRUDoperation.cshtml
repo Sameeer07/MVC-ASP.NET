@@ -1,0 +1,63 @@
+﻿@model WebApplication1.Models.Customer
+
+@{
+    ViewBag.Title = "CRUDoperation";
+}
+
+<h2>Manage Customer Records</h2>
+<html>
+<body style="background-color:aqua; font-size:large; color:darkslateblue" >
+    <center>@using (Html.BeginForm())
+    {
+       <table>
+            <tr>
+                <td>Customer ID</td>
+                <td>@Html.EditorFor(model => model.CId, new { @Value = ViewBag.CId })</td>
+            </tr>
+            <tr>
+                <td>Customer Name</td>
+                <td>@Html.TextBoxFor(model => model.CName, new { @Value = ViewBag.CName })</td>
+            </tr>
+            <tr>
+                <td>Contact Number</td>
+                <td>@Html.TextBoxFor(model => model.ContactNo, new { @Value = ViewBag.ContactNo })</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>@Html.TextBoxFor(model => model.Email, new { @Value = ViewBag.Email })</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>@Html.TextBoxFor(model => model.Address, new { @Value = ViewBag.Address })</td>
+            </tr>
+            <tr>
+                <table>
+                    <tr>
+                        <td>
+                            <input type="submit" name="btn" id="save" value="save" />
+                        </td>
+                        <td>
+                            <input type="submit" name="btn" id="search" value="search" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" name="btn" id="update" value="update" />
+                        </td>
+                        <td>
+                            <input type="submit" name="btn" id="delete" value="delete" />
+                        </td>
+                    </tr>
+                </table>
+            </tr>
+        </table>
+    }
+      </center>
+
+</body>
+</html>
+@if(ViewBag.msg!=null)
+            {
+                <p>@ViewBag.msg</p>
+            }
+
